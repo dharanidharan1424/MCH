@@ -1,0 +1,2149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Madras Coffee House - Authentic Taste. Structured Growth.</title>
+  <meta name="description"
+    content="South India's iconic filter coffee brand. 180+ stores and expanding across metro India. Franchise opportunities available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --red: #e4272e;
+      --orange: #f3920a;
+      --white: #fefefe;
+      --black: #111111;
+      --gray: #6b7280;
+      --light: #f8f8f6;
+      --border: #e5e5e0
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden
+    }
+
+    /* ── NAVBAR ────────────────────────────────────────── */
+    nav#nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0 5%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .35s, box-shadow .35s, height .35s;
+      background: transparent
+    }
+
+    #nav.scrolled {
+      background: var(--white);
+      box-shadow: 0 1px 0 var(--border);
+      height: 64px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      transition: transform .3s ease
+    }
+
+    .logo img:hover {
+      transform: scale(1.04)
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 0;
+      list-style: none
+    }
+
+    .nav-center a {
+      display: inline-block;
+      padding: .5rem 1.1rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--black);
+      text-decoration: none;
+      position: relative;
+      transition: color .25s
+    }
+
+    .nav-center a::after {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      right: 1.1rem;
+      bottom: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transition: transform .3s cubic-bezier(.25, .46, .45, .94)
+    }
+
+    .nav-center a:hover {
+      color: var(--red)
+    }
+
+    .nav-center a:hover::after {
+      transform: scaleX(1)
+    }
+
+    .nav-right {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      flex-shrink: 0
+    }
+
+    .btn-outline-nav {
+      background: transparent;
+      color: var(--red);
+      border: 1.5px solid var(--red);
+      padding: .48rem 1.1rem;
+      font-size: .74rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none
+    }
+
+    .btn-outline-nav:hover {
+      background: var(--red);
+      color: #fff
+    }
+
+    .btn-solid-nav {
+      background: var(--red);
+      color: #fff;
+      border: 1.5px solid var(--red);
+      padding: .48rem 1.1rem;
+      font-size: .74rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      cursor: pointer;
+      transition: all .25s;
+      text-decoration: none
+    }
+
+    .btn-solid-nav:hover {
+      background: #c41f25;
+      border-color: #c41f25
+    }
+
+    /* ── BUTTONS ───────────────────────────────────────── */
+    .btn-primary {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      padding: .85rem 2rem;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .2s, box-shadow .25s
+    }
+
+    .btn-primary:hover {
+      background: #c41f25;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(228, 39, 46, .25)
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--black);
+      padding: .85rem 2rem;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--black);
+      cursor: pointer;
+      transition: all .25s
+    }
+
+    .btn-secondary:hover {
+      background: var(--black);
+      color: #fff;
+      transform: translateY(-2px)
+    }
+
+    .btn-orange {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      padding: .85rem 2rem;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all .25s
+    }
+
+    .btn-orange:hover {
+      background: #d97d05;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(243, 146, 10, .25)
+    }
+
+    /* ── REVEAL ANIMATIONS ────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s cubic-bezier(.25, .46, .45, .94), transform .75s cubic-bezier(.25, .46, .45, .94)
+    }
+
+    .fade-up.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity .75s ease
+    }
+
+    .fade-in.in {
+      opacity: 1
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity .75s cubic-bezier(.25, .46, .45, .94), transform .75s cubic-bezier(.25, .46, .45, .94)
+    }
+
+    .slide-left.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity .75s cubic-bezier(.25, .46, .45, .94), transform .75s cubic-bezier(.25, .46, .45, .94)
+    }
+
+    .slide-right.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .d1 {
+      transition-delay: .1s
+    }
+
+    .d2 {
+      transition-delay: .2s
+    }
+
+    .d3 {
+      transition-delay: .3s
+    }
+
+    .d4 {
+      transition-delay: .4s
+    }
+
+    .d5 {
+      transition-delay: .5s
+    }
+
+    /* ── LAYOUT DEFAULTS ───────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .sec-pad {
+      padding: 80px 5%
+    }
+
+    .sec-compact {
+      padding: 60px 5%
+    }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      min-height: 540px;
+      padding: 120px 5%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      overflow: hidden
+    }
+
+    .hero-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden
+    }
+
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      animation: shapeFloat 10s ease-in-out infinite
+    }
+
+    .shape-1 {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(228, 39, 46, .06), transparent 70%);
+      top: -80px;
+      right: -60px;
+      animation-duration: 12s
+    }
+
+    .shape-2 {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(243, 146, 10, .07), transparent 70%);
+      bottom: 80px;
+      right: 15%;
+      animation-duration: 9s;
+      animation-delay: 2s
+    }
+
+    .shape-3 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(228, 39, 46, .04), transparent 70%);
+      top: 40%;
+      left: 5%;
+      animation-duration: 14s;
+      animation-delay: 4s
+    }
+
+    @keyframes shapeFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1)
+      }
+
+      50% {
+        transform: translateY(-20px) scale(1.04)
+      }
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--red)
+    }
+
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+      margin-bottom: 1.5rem;
+      color: var(--black)
+    }
+
+    .hero-h1 em {
+      color: var(--red);
+      font-style: normal
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      max-width: 480px
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border)
+    }
+
+    .hstat {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem
+    }
+
+    .hstat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1
+    }
+
+    .hstat-lbl {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gray)
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      width: 100%
+    }
+
+    .hero-img-main {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block
+    }
+
+    .hero-img-fallback {
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(135deg, #fef3f3, #fde8cc);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem
+    }
+
+    .hero-img-fallback span {
+      font-size: 6rem
+    }
+
+    .hero-img-fallback p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gray)
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -1rem;
+      left: -1.5rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 1rem 1.4rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .1)
+    }
+
+    .hero-badge b {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      display: block;
+      color: var(--red);
+      line-height: 1
+    }
+
+    .hero-badge span {
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gray)
+    }
+
+    .hero-badge-2 {
+      position: absolute;
+      top: 1.5rem;
+      right: -1rem;
+      background: var(--red);
+      padding: .8rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(228, 39, 46, .3)
+    }
+
+    .hero-badge-2 b {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #fff;
+      display: block
+    }
+
+    .hero-badge-2 small {
+      font-size: .62rem;
+      color: rgba(255, 255, 255, .75)
+    }
+
+    /* ── AUTHORITY STRIP ───────────────────────────────── */
+    #strip {
+      background: var(--red);
+      padding: 60px 5%
+    }
+
+    .strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .strip-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      color: #fff
+    }
+
+    .strip-headline span {
+      display: block;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 400;
+      font-family: 'Inter', sans-serif;
+      color: rgba(255, 255, 255, .7);
+      margin-top: .5rem;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .strip-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem
+    }
+
+    .strip-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem
+    }
+
+    .sp-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .25);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem
+    }
+
+    .sp-text b {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: .2rem
+    }
+
+    .sp-text p {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.6
+    }
+
+    /* ── HERITAGE ───────────────────────────────────────── */
+    .sec-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 1.5rem
+    }
+
+    .heritage-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 100px 20px
+    }
+
+    .heritage-img {
+      flex: 1;
+      max-width: 550px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .heritage-img-main {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: scale(1.07);
+      transition: transform 1.2s ease-out
+    }
+
+    .heritage-text {
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative
+    }
+
+    @media (max-width:768px) {
+      .heritage-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px
+      }
+
+      .sec-divider {
+        margin: 0 auto 1.5rem
+      }
+    }
+
+    /* ── FORMAT SECTION ─────────────────────────────────── */
+    #format {
+      padding: 80px 0;
+      background: #f7f7f7;
+      border-top: 1px solid var(--border)
+    }
+
+    .format-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+      padding: 0 20px
+    }
+
+    .fstep-desc {
+      font-size: .88rem;
+      color: var(--gray);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 0
+    }
+
+    .fcard {
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden
+    }
+
+    .fcard:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      background: #fff !important
+    }
+
+    .fcard-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      color: var(--black);
+      transition: all 0.3s ease
+    }
+
+    .fcard:hover .fcard-icon {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff
+    }
+
+    .fcard:nth-child(even):hover .fcard-icon {
+      background: var(--orange);
+      border-color: var(--orange)
+    }
+
+    /* ── TRUST BAR ─────────────────────────────────────── */
+    #trust {
+      padding: 80px 5%;
+      background: #111;
+      border: none
+    }
+
+    .trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .trust-label {
+      text-align: center;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .38);
+      margin-bottom: 3.5rem
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .trust-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: transparent;
+      border: none;
+      border-right: 1px solid rgba(255, 255, 255, .08);
+      transition: background .35s;
+      position: relative
+    }
+
+    .trust-card:last-child {
+      border-right: none
+    }
+
+    .trust-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 40px;
+      height: 2px;
+      background: var(--orange);
+      transition: transform .35s
+    }
+
+    .trust-card:hover {
+      background: rgba(255, 255, 255, .04)
+    }
+
+    .trust-card:hover::after {
+      transform: translateX(-50%) scaleX(1)
+    }
+
+    .trust-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+      color: #fff
+    }
+
+    .trust-card p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.6
+    }
+
+    /* ── MEDIA / RECOGNISED ────────────────────────────── */
+    #media {
+      padding: 80px 5%;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .media-header {
+      max-width: 800px;
+      margin: 0 auto 3rem
+    }
+
+    .media-accent {
+      width: 80px;
+      height: 3px;
+      background: var(--orange);
+      margin: 15px auto 30px
+    }
+
+    .media-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1
+    }
+
+    .media-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto
+    }
+
+    .media-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--border);
+      text-align: left
+    }
+
+    .media-row:last-child {
+      border-bottom: none
+    }
+
+    .media-row-icon {
+      font-size: 2.2rem;
+      text-align: center
+    }
+
+    .press-strip {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 1.8rem 2rem;
+      background: var(--light);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1
+    }
+
+    /* ── EXPANSION ─────────────────────────────────────── */
+    #expansion {
+      padding: 7rem 5%;
+      background: linear-gradient(135deg, #fff9f5 0%, #fef3e2 60%, #fff9f5 100%);
+      border-top: 3px solid var(--orange)
+    }
+
+    .expansion-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .expansion-text .sec-title {
+      margin-bottom: 1.5rem
+    }
+
+    .expansion-text p {
+      font-size: .92rem;
+      color: var(--gray);
+      line-height: 1.85;
+      margin-bottom: 2rem
+    }
+
+    .city-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-bottom: 2rem
+    }
+
+    .city-pill {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .6rem .9rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--black)
+    }
+
+    .city-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0
+    }
+
+    .city-pill.active .city-dot {
+      background: var(--orange)
+    }
+
+    .city-pill span {
+      font-size: .65rem;
+      color: var(--gray);
+      margin-left: auto
+    }
+
+    .expansion-visual {
+      position: relative
+    }
+
+    .exp-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem
+    }
+
+    .exp-stat {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .exp-stat::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--orange)
+    }
+
+    .exp-stat:first-child::after,
+    .exp-stat:nth-child(4):after {
+      background: var(--red)
+    }
+
+    .exp-stat .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: .3rem
+    }
+
+    .exp-stat .lbl {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gray)
+    }
+
+    /* ── FRANCHISE CTA ─────────────────────────────────── */
+    #franchise-cta {
+      padding: 7rem 5%;
+      background: #000;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      color: #fff
+    }
+
+    .franchise-cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center
+    }
+
+    .franchise-cta-inner .sec-eyebrow {
+      justify-content: center;
+      color: var(--orange)
+    }
+
+    .franchise-cta-inner .sec-title {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 1.2rem
+    }
+
+    .franchise-cta-inner>p {
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .7);
+      line-height: 1.8;
+      margin-bottom: 2.5rem
+    }
+
+    .cta-contacts {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1)
+    }
+
+    .cta-contact {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-align: left
+    }
+
+    .cta-contact-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+      color: var(--orange)
+    }
+
+    .cta-contact label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      display: block
+    }
+
+    .cta-contact a,
+    .cta-contact span {
+      font-size: .82rem;
+      color: #fff;
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .cta-contact a:hover {
+      color: var(--red)
+    }
+
+    /* ── TESTIMONIALS ──────────────────────────────────── */
+    #testimonials {
+      background: #000;
+      padding: 6rem 5%;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff
+    }
+
+    .testi-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .testi-underline {
+      width: 52px;
+      height: 3px;
+      background: var(--red);
+      margin: .9rem auto 0
+    }
+
+    .testi-track-wrap {
+      overflow: hidden;
+      margin: 0 -5%;
+      padding: 0 5%
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 1.5rem;
+      width: max-content;
+      animation: testiScroll 28s linear infinite
+    }
+
+    .testi-track:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes testiScroll {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(calc(-50% - .75rem))
+      }
+    }
+
+    .testimonial-card {
+      flex-shrink: 0;
+      width: 360px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 3px solid var(--red);
+      transition: all .3s
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      border-top-color: var(--orange)
+    }
+
+    .t-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      line-height: .8;
+      color: var(--red);
+      font-weight: 900;
+      opacity: .15
+    }
+
+    .t-text {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.85;
+      font-style: italic;
+      flex: 1
+    }
+
+    .t-meta {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: .9rem;
+      margin-top: auto
+    }
+
+    .t-stars {
+      color: var(--orange);
+      font-size: .9rem;
+      margin-bottom: .4rem;
+      letter-spacing: 2px
+    }
+
+    .t-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .15rem
+    }
+
+    .t-loc {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: .2rem
+    }
+
+    .t-format {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red)
+    }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 80px 5% 40px
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem
+    }
+
+    .footer-brand p {
+      font-size: .8rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin: 1rem 0 1.2rem
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: .6rem
+    }
+
+    .fsoc {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all .3s;
+      box-shadow: 0 4px 12px rgba(228, 39, 46, .3);
+      flex-shrink: 0
+    }
+
+    .fsoc:hover {
+      background: var(--orange);
+      transform: scale(1.1);
+      box-shadow: 0 6px 18px rgba(243, 146, 10, .4)
+    }
+
+    .fsoc svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0
+    }
+
+    .footer-col h5 {
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 1.2rem
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem
+    }
+
+    .footer-col a {
+      font-size: .8rem;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color .25s
+    }
+
+    .footer-col a:hover {
+      color: var(--red)
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: .75rem
+    }
+
+    .footer-bottom p {
+      font-size: .72rem;
+      color: var(--gray)
+    }
+
+    .footer-bottom a {
+      font-size: .72rem;
+      color: var(--gray);
+      text-decoration: none
+    }
+
+    .footer-bottom a:hover {
+      color: var(--red)
+    }
+
+    .footer-red-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%
+    }
+
+    /* ── FOUNDER TEASER ─────────────────────────────────── */
+    #founder-teaser {
+      padding: 100px 5%;
+      background: var(--light);
+      border-top: 1px solid var(--border)
+    }
+
+    .founder-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 80px
+    }
+
+    .founder-img-col {
+      flex: 0 0 420px;
+      position: relative
+    }
+
+    .founder-img-frame {
+      position: relative;
+      overflow: hidden
+    }
+
+    .founder-img-frame::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: 12px;
+      bottom: 12px;
+      border: 2px solid var(--red);
+      z-index: 0;
+      pointer-events: none
+    }
+
+    .founder-img-frame img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: grayscale(8%)
+    }
+
+    .founder-img-badge {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--red);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      z-index: 2;
+      box-shadow: 0 8px 24px rgba(228, 39, 46, .3)
+    }
+
+    .founder-img-badge b {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      display: block;
+      line-height: 1
+    }
+
+    .founder-img-badge span {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .85
+    }
+
+    .founder-text-col {
+      flex: 1;
+      max-width: 560px
+    }
+
+    .founder-eyebrow {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.2rem
+    }
+
+    .founder-eyebrow::after {
+      content: '';
+      flex: 1;
+      max-width: 36px;
+      height: 1.5px;
+      background: var(--orange)
+    }
+
+    .founder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.05;
+      margin-bottom: .4rem
+    }
+
+    .founder-role {
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.6rem
+    }
+
+    .founder-divider {
+      width: 36px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 1.8rem
+    }
+
+    .founder-bio {
+      font-size: .95rem;
+      color: var(--gray);
+      line-height: 1.88;
+      margin-bottom: 1.2rem
+    }
+
+    .founder-bio:last-of-type {
+      margin-bottom: 2rem
+    }
+
+    .founder-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2.5rem
+    }
+
+    .founder-tag {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--black);
+      border: 1.5px solid var(--border);
+      padding: .35rem .9rem;
+      background: var(--white)
+    }
+
+    .btn-read-story {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--black);
+      color: #fff;
+      padding: .88rem 2rem;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .25s
+    }
+
+    .btn-read-story svg {
+      width: 16px;
+      height: 16px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform .25s
+    }
+
+    .btn-read-story:hover {
+      background: var(--red);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(228, 39, 46, .25)
+    }
+
+    .btn-read-story:hover svg {
+      transform: translateX(4px)
+    }
+
+    @media(max-width:1024px) {
+      .founder-inner {
+        gap: 50px
+      }
+
+      .founder-img-col {
+        flex: 0 0 340px
+      }
+    }
+
+    @media(max-width:768px) {
+      .founder-inner {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center
+      }
+
+      .founder-img-col {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto
+      }
+
+      .founder-img-frame::before {
+        display: none
+      }
+
+      .founder-img-frame img {
+        height: 420px
+      }
+
+      .founder-eyebrow {
+        justify-content: center
+      }
+
+      .founder-divider {
+        margin: 0 auto 1.8rem
+      }
+
+      .founder-tags {
+        justify-content: center
+      }
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media(max-width:1024px) {
+      #hero {
+        min-height: auto;
+        padding: 80px 4%
+      }
+
+      .hero-inner,
+      .strip-inner,
+      .expansion-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center
+      }
+
+      .hero-sub {
+        margin: 0 auto 2.5rem
+      }
+
+      .split-layout {
+        flex-direction: column
+      }
+
+      .sec-pad,
+      #hero,
+      #strip,
+      #heritage,
+      #format,
+      #trust,
+      #media,
+      #expansion,
+      #franchise-cta,
+      #testimonials {
+        padding: 60px 4%
+      }
+    }
+
+    @media(max-width:768px) {
+      body {
+        overflow-x: hidden
+      }
+
+      .sec-pad {
+        padding: 60px 5%
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center
+      }
+
+      .split-layout {
+        flex-direction: column
+      }
+
+      .fstep {
+        grid-template-columns: 1fr !important;
+        text-align: center
+      }
+
+      .fstep-num::after {
+        display: none
+      }
+
+      .fcard-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 15px
+      }
+
+      .fcard-icon svg {
+        width: 20px;
+        height: 20px
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="logo">
+      <img src="madras.svg" alt="Madras Coffee House" loading="eager" />
+    </a>
+    <ul class="nav-center">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Our Menu</a></li>
+
+      <li><a href="#about" data-scroll="about">About</a></li>
+      <li><a href="franchise.html">Franchise</a></li>
+      <li><a href="stores.html">Our Stores</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="stores.html" class="btn-outline-nav">Find a Store</a>
+      <a href="franchise.html" class="btn-solid-nav">Become a Partner</a>
+    </div>
+    <button class="mobile-menu-btn mob-btn" id="mobBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══ HERO ════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag fade-up">South India's Iconic Filter Coffee Brand</div>
+        <h1 class="hero-h1 fade-up d1">Authentic Taste.<br /><em>Structured Growth.</em></h1>
+        <p class="hero-sub fade-up d2">South India's most trusted filter coffee chain. Now 180+ stores strong and
+          expanding rapidly across metro India - built on a proven QSR model.</p>
+        <div class="hero-btns fade-up d3">
+          <a href="#franchise-cta" class="btn-primary">Become a Franchise Partner</a>
+          <a href="stores.html" class="btn-secondary">Find a Store Near You</a>
+        </div>
+        <div class="hero-stats fade-in d4">
+          <div class="hstat">
+            <div class="hstat-num" data-counter="180" data-suffix="+">0+</div>
+            <div class="hstat-lbl">Stores in India</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num">2010</div>
+            <div class="hstat-lbl">Est. Chennai</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-num" data-counter="15" data-suffix="+">0+</div>
+            <div class="hstat-lbl">Cities &amp; Counting</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-in d2">
+        <div class="hero-img-wrap">
+          <img class="hero-img-main" src="https://madrascoffeehouse.com/wp-content/uploads/2023/08/home-coffee.png"
+            alt="Madras Coffee House filter coffee"
+            onerror="this.style.display='none';document.getElementById('hero-fb').style.display='flex'" />
+          <div id="hero-fb" class="hero-img-fallback" style="display:none"><span>☕</span>
+            <p>Authentic Filter Coffee</p>
+          </div>
+          <div class="hero-badge"><b>180+</b><span>Stores Pan India</span></div>
+          <div class="hero-badge-2"><b>QSR Express Model</b><small>300–600 sq ft</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ AUTHORITY STRIP ═════════════════════════════════════════ -->
+  <section id="strip">
+    <div class="strip-inner">
+      <div class="fade-up">
+        <div class="strip-headline">180+ STORES<span>Growing Across Metro India</span></div>
+      </div>
+      <div class="strip-points">
+        <div class="strip-point fade-up d1">
+          <div class="sp-icon">📋</div>
+          <div class="sp-text"><b>Standardised Brewing SOP</b>
+            <p>Every cup brewed to the same precise standard across all 180+ locations - no variation, no compromise.
+            </p>
+          </div>
+        </div>
+        <div class="strip-point fade-up d2">
+          <div class="sp-icon">📐</div>
+          <div class="sp-text"><b>Scalable 300–600 sq ft Express Format</b>
+            <p>Designed for malls, metro stations, airports, and high-footfall corridors. Maximum efficiency, minimal
+              footprint.</p>
+          </div>
+        </div>
+        <div class="strip-point fade-up d3">
+          <div class="sp-icon">⚙️</div>
+          <div class="sp-text"><b>Proven Operational Model</b>
+            <p>15 years of operational refinement - supply chain, training, and technology all structured for national
+              scale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HERITAGE ════════════════════════════════════════════════ -->
+  <section id="heritage" style="scroll-margin-top:72px">
+    <div class="heritage-inner">
+      <div class="heritage-img fade-up">
+        <img class="heritage-img-main" src="https://madrascoffeehouse.com/wp-content/uploads/2023/08/about-hero.jpg"
+          alt="Authentic Madras filter coffee" />
+      </div>
+      <div class="heritage-text fade-up d1">
+        <div class="heritage-badge"
+          style="display:inline-flex;padding:.4rem 1rem;background:rgba(243,146,10,.1);color:var(--orange);font-size:.7rem;font-weight:700;letter-spacing:.2em;margin-bottom:1.5rem">
+          Authentic Since 2010</div>
+        <div class="sec-eyebrow" style="justify-content:flex-start">Our Heritage</div>
+        <h2 class="sec-title" style="margin-bottom:1.5rem">Born in South India.<br />Brewed with Precision.<br />Served
+          with Consistency.</h2>
+        <div class="sec-divider"></div>
+        <p style="font-size:.95rem;color:var(--gray);line-height:1.8;margin-bottom:1.2rem">At Madras Coffee House,
+          tradition meets emotion in every sip. Born in 2010 from the vision of founders who wanted to celebrate
+          authentic South Indian filter coffee, our mission was simple - preserve heritage while building something
+          scalable.</p>
+        <p style="font-size:.95rem;color:var(--gray);line-height:1.8;margin-bottom:2rem">From a single outlet in Chennai
+          to a thriving network of 180+ stores, we have grown into a recognized national brand. Every cup follows the
+          same meticulous brewing ritual.</p>
+        <div class="heritage-pillars" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+          <div class="pillar" style="border-left:3px solid var(--orange);padding:1rem;background:var(--light)">
+            <b style="font-size:.85rem">Proprietary Blend</b>
+            <p style="font-size:.8rem;color:var(--gray)">Estate-sourced beans, roasted in-house.</p>
+          </div>
+          <div class="pillar" style="border-left:3px solid var(--orange);padding:1rem;background:var(--light)">
+            <b style="font-size:.85rem">Brewing SOP</b>
+            <p style="font-size:.8rem;color:var(--gray)">Standardized ritual across all stores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOUNDER TEASER ══════════════════════════════════════════ -->
+  <section id="founder-teaser">
+    <div class="founder-inner">
+      <div class="founder-img-col slide-left">
+        <div class="founder-img-frame">
+          <img src="founders.webp" alt="Founders of Madras Coffee House" />
+          <div class="founder-img-badge">
+            <b>Est. 2010</b>
+            <span>Founders</span>
+          </div>
+        </div>
+      </div>
+      <div class="founder-text-col slide-right">
+        <div class="founder-eyebrow">Meet Our Founders</div>
+        <h2 class="founder-name">Prasanna Kumar<br />&amp; Kumaaravelan</h2>
+        <div class="founder-role">Co-Founders &amp; Directors</div>
+        <div class="founder-divider"></div>
+        <p class="founder-bio">
+          Driven by a shared passion for South India's rich coffee culture,
+          Prasanna Kumar and Kumaaravelan co-founded Madras Coffee House in
+          2010. Together they built a brand rooted in authenticity, starting
+          from a single outlet in Chennai and scaling to 180+ stores across India.
+        </p>
+        <p class="founder-bio">
+          Their complementary strengths, Prasanna's operational mastery and
+          Kumaaravelan's brand architecture, created a franchise model that
+          balances heritage with modern scalability, winning the trust of
+          partners and customers alike across 15+ cities.
+        </p>
+        <div class="founder-tags">
+          <span class="founder-tag">15+ Yrs F&amp;B Experience</span>
+          <span class="founder-tag">180+ Outlets Built</span>
+          <span class="founder-tag">QSR Innovators</span>
+          <span class="founder-tag">Est. Chennai 2010</span>
+        </div>
+        <a href="founders.html" class="btn-read-story">
+          Read Their Full Story
+          <svg viewBox="0 0 24 24">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ EXPANSION VISION ════════════════════════════════════════ -->
+  <section id="expansion">
+    <div class="expansion-inner">
+      <div class="expansion-text slide-left">
+        <div class="sec-eyebrow">Expansion Vision</div>
+        <h2 class="sec-title">From South India<br />to the Nation.</h2>
+        <div class="sec-divider"></div>
+        <p>Our metro-first strategy targets the highest-value coffee-consuming demographics - IT professionals,
+          commuters, and urban families in Tier 1 cities. South India is our stronghold. The rest of India is our next
+          frontier.</p>
+        <div class="city-grid fade-up">
+          <div class="city-pill active">
+            <div class="city-dot"></div>Tamil Nadu<span>Stronghold · 120+</span>
+          </div>
+          <div class="city-pill active">
+            <div class="city-dot"></div>Karnataka<span>Expanding · 35+</span>
+          </div>
+          <div class="city-pill">
+            <div class="city-dot"></div>Telangana<span>Growing · 20+</span>
+          </div>
+          <div class="city-pill">
+            <div class="city-dot"></div>Maharashtra<span>New · 8+</span>
+          </div>
+          <div class="city-pill">
+            <div class="city-dot"></div>Delhi NCR<span>Launching</span>
+          </div>
+          <div class="city-pill">
+            <div class="city-dot"></div>Gujarat<span>Pipeline</span>
+          </div>
+        </div>
+        <a href="#franchise-cta" class="btn-orange fade-up d2">Explore Franchise Opportunity</a>
+      </div>
+      <div class="expansion-visual slide-right">
+        <div class="exp-stats-grid">
+          <div class="exp-stat fade-up">
+            <div class="num" data-counter="180" data-suffix="+">0+</div>
+            <div class="lbl">Stores Nationwide</div>
+          </div>
+          <div class="exp-stat fade-up d1">
+            <div class="num" data-counter="15" data-suffix="+">0+</div>
+            <div class="lbl">Cities Active</div>
+          </div>
+          <div class="exp-stat fade-up d2">
+            <div class="num">2010</div>
+            <div class="lbl">Year Founded</div>
+          </div>
+          <div class="exp-stat fade-up d3">
+            <div class="num" data-counter="500" data-suffix="+">0+</div>
+            <div class="lbl">Target Stores by 2027</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FRANCHISE CTA ═══════════════════════════════════════════ -->
+  <section id="franchise-cta" style="scroll-margin-top:72px"><span id="franchise-preview"
+      style="position:absolute;top:-80px"></span>
+    <div class="franchise-cta-inner">
+      <div class="sec-eyebrow fade-up" style="justify-content:center;color:var(--orange)">Franchise Partnership</div>
+      <h2 class="sec-title fade-up d1" style="font-size:clamp(2rem,4vw,3.5rem);color:#fff;margin-bottom:1.2rem">Own a
+        Madras Coffee House.<br />Build a Proven Business.</h2>
+      <p class="fade-up d2">Join one of South India's most trusted filter coffee brands. We provide site selection,
+        complete store setup, SOP training, and ongoing operational support - so you can focus on growth.</p>
+      <div class="fade-up d3" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://madrascoffeehouse.com/wp-content/uploads/2025/10/MCH-PRESENTATION-new-final-.pdf"
+          class="btn-orange" target="_blank">Download Franchise Brochure</a>
+        <a href="https://madrascoffeehouse.com/wp-content/uploads/2023/06/MCH-PROFILE.pdf" class="btn-secondary"
+          target="_blank" style="border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.8)">Download Company
+          Profile</a>
+      </div>
+      <div class="cta-contacts fade-in d4">
+        <div class="cta-contact">
+          <div class="cta-contact-icon">✉</div>
+          <div><label>Franchise Enquiry</label><a
+              href="mailto:prasanna@madrascoffeehouse.com">prasanna@madrascoffeehouse.com</a></div>
+        </div>
+        <div class="cta-contact">
+          <div class="cta-contact-icon">✉</div>
+          <div><label>Partnership</label><a
+              href="mailto:kumaaravelan@madrascoffeehouse.com">kumaaravelan@madrascoffeehouse.com</a></div>
+        </div>
+        <div class="cta-contact">
+          <div class="cta-contact-icon">📞</div>
+          <div><label>Call Us</label><a href="tel:+919876543210">+91 98765 43210</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═══════════════════════════════════════════ -->
+  <section id="testimonials">
+    <div class="testi-header fade-up">
+      <div class="sec-eyebrow" style="justify-content:center;color:var(--orange)">Partner Testimonials</div>
+      <h2 class="sec-title" style="font-size:clamp(1.8rem,3vw,2.6rem);color:#fff">What Our Partners Say</h2>
+      <div class="testi-underline"></div>
+      <p style="font-size:.92rem;color:rgba(255,255,255,.55);margin-top:.8rem">Built on trust. Growing with confidence.
+      </p>
+    </div>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+        <div class="testimonial-card">
+          <div class="t-quote">&ldquo;</div>
+          <p class="t-text">Partnering with Madras Coffee House was the best business decision I've made. The SOP is
+            airtight, the supply chain never fails, and the brand does the selling for us. My store at Indiranagar Metro
+            broke even faster than projected.</p>
+          <div class="t-meta">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-name">Suresh Krishnamurthy</div>
+            <div class="t-loc">Indiranagar Metro, Bangalore</div>
+            <div class="t-format">Express Café Format</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-quote">&ldquo;</div>
+          <p class="t-text">The franchise team held our hand through every stage - from selecting the location to
+            training our staff. Three years in, our Koyambedu outlet serves 400+ cups a day consistently. MCH's systems
+            work.</p>
+          <div class="t-meta">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-name">Priya Ramesh</div>
+            <div class="t-loc">Koyambedu Metro, Chennai</div>
+            <div class="t-format">Express Café Format</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-quote">&ldquo;</div>
+          <p class="t-text">I was looking for a food business that had real brand value and a proven model. MCH
+            delivered both. The brand recall is incredible - customers walk in knowing what they want. The morning rush
+            alone covers costs.</p>
+          <div class="t-meta">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-name">Anil Venkataraman</div>
+            <div class="t-loc">DLF Cyber City, Hyderabad</div>
+            <div class="t-format">IT Park Kiosk Format</div>
+          </div>
+        </div>
+        <!-- Duplicates for infinite feel -->
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="t-quote">&ldquo;</div>
+          <p class="t-text">Partnering with Madras Coffee House was the best business decision I've made. The SOP is
+            airtight, the supply chain never fails, and the brand does the selling for us.</p>
+          <div class="t-meta">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-name">Suresh Krishnamurthy</div>
+            <div class="t-loc">Indiranagar Metro, Bangalore</div>
+            <div class="t-format">Express Café Format</div>
+          </div>
+        </div>
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="t-quote">&ldquo;</div>
+          <p class="t-text">The franchise team held our hand through every stage. Three years in, our Koyambedu outlet
+            serves 400+ cups a day consistently. MCH's systems work.</p>
+          <div class="t-meta">
+            <div class="t-stars">★★★★★</div>
+            <div class="t-name">Priya Ramesh</div>
+            <div class="t-loc">Koyambedu Metro, Chennai</div>
+            <div class="t-format">Express Café Format</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="fade-up">
+      <a href="franchise.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:.5rem">Explore
+        Franchise Opportunity &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom:.8rem">
+            <img src="madras.svg" alt="Madras Coffee House" style="height:54px" />
+          </div>
+          <p>Authentic South Indian filter coffee and snacks served in a modern, premium café environment. 180+ stores
+            across India.</p>
+          <div class="footer-socials">
+            <a class="fsoc" href="https://www.facebook.com/madrascoffeehouseofficial/" target="_blank" title="Facebook"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="white">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a class="fsoc" href="https://www.instagram.com/madrascoffeehouseofficial/" target="_blank"
+              title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1.2" fill="white" stroke="none" />
+              </svg>
+            </a>
+            <a class="fsoc" href="https://www.youtube.com/@madrascoffeehouseofficial" target="_blank" title="YouTube"
+              aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 00-1.96-1.96C18.88 4 12 4 12 4s-6.88 0-8.58.46a2.78 2.78 0 00-1.96 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.96 1.96C5.12 20 12 20 12 20s6.88 0 8.58-.46a2.78 2.78 0 001.96-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
+                <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="#e4272e" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Brand</h5>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="founders.html">Our Founders</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Stores</h5>
+          <ul>
+            <li><a href="stores.html">Find a Store</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Franchise</h5>
+          <ul>
+            <li><a href="franchise.html">Why Partner With Us</a></li>
+            <li><a href="https://madrascoffeehouse.com/wp-content/uploads/2025/10/MCH-PRESENTATION-new-final-.pdf"
+                target="_blank">Brochure</a></li>
+            <li><a href="https://madrascoffeehouse.com/wp-content/uploads/2023/06/MCH-PROFILE.pdf"
+                target="_blank">Company Profile</a></li>
+            <li><a href="mailto:prasanna@madrascoffeehouse.com">Enquire Now</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@madrascoffeehouse.com">info@madrascoffeehouse.com</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><span style="font-size:.8rem;color:var(--gray)">Chennai, Tamil Nadu</span></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Madras Coffee House Pvt. Ltd. All rights reserved.</p>
+        <div style="display:flex;align-items:center;gap:.5rem">
+          <div class="footer-red-dot"></div>
+          <p>Chennai, Tamil Nadu, India</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── NAVBAR ──────────────────────────────────────────────
+    const NAV = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      NAV.classList.toggle('scrolled', scrollY > 40);
+    }, { passive: true });
+
+    // ── INTERSECTION OBSERVER  -  REVEAL ──────────────────────
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          revObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up,.fade-in,.slide-left,.slide-right').forEach(el => revObs.observe(el));
+
+    // ── ANIMATED COUNTERS ───────────────────────────────────
+    const cntObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const tgt = +el.dataset.counter;
+        const suf = el.dataset.suffix || '';
+        if (!tgt) return;
+        let cur = 0;
+        const inc = tgt / 60;
+        const tick = setInterval(() => {
+          cur = Math.min(cur + inc, tgt);
+          el.textContent = Math.floor(cur) + suf;
+          if (cur >= tgt) clearInterval(tick);
+        }, 20);
+        cntObs.unobserve(el);
+      });
+    }, { threshold: .6 });
+    document.querySelectorAll('[data-counter]').forEach(el => cntObs.observe(el));
+
+    // ── SMOOTH SCROLL ───────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        const tgt = document.querySelector(href);
+        if (tgt) {
+          e.preventDefault();
+          const navH = NAV.offsetHeight || 72;
+          const top = tgt.getBoundingClientRect().top + window.scrollY - navH;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── PAGE FADE TRANSITION ─────────────────────────────────
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity .3s';
+    setTimeout(() => document.body.style.opacity = '1', 50);
+    document.querySelectorAll('a[href]').forEach(a => {
+      const h = a.getAttribute('href');
+      if (!h || h.startsWith('#') || h.startsWith('mailto:') || h.startsWith('tel:') || h.startsWith('http') || a.target === "_blank") return;
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.style.opacity = '0';
+        setTimeout(() => window.location.href = h, 300);
+      });
+    });
+  </script>
+  <script src="mobile.js" defer></script>
+</body>
+
+</html>
