@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="mobile.css" />
     <style>
         /* â”€â”€ DESIGN SYSTEM â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         :root {
@@ -838,12 +839,7 @@
             color: var(--red)
         }
 
-        .footer-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--red);
-            border-radius: 50%
-        }
+
 
         /* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
         @media(max-width:1024px) {
@@ -875,8 +871,11 @@
                 grid-template-columns: 1fr 1fr
             }
 
-            .hero-img-wrap {
-                height: 300px
+            #founders-hero .hero-img-wrap {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 380px !important;
+                margin: 0 !important;
             }
 
             /* Reduce section whitespace on mobile */
@@ -1001,7 +1000,7 @@
             <a href="stores.html" class="btn-outline-nav">Find a Store</a>
             <a href="franchise.html" class="btn-solid-nav">Become a Partner</a>
         </div>
-        <button class="mobile-menu-btn" id="mobBtn" aria-label="Open menu">
+        <button class="mobile-menu-btn mob-btn" id="mobBtn" aria-label="Open menu">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -1115,6 +1114,39 @@
             <div class="sec-divider fade-up d2"></div>
 
             <div class="founders-grid">
+                <!-- KUMAARAVELAN CARD -->
+                <div class="founder-card fade-up d3">
+                    <div class="fc-img">
+                        <!-- Replace placeholder with: <img src="kumaaravelan.jpg" alt="M Kumaaravelan"/> -->
+                        <div class="fc-img-placeholder">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                            </svg>
+                            Kumaaravelan Photo
+                        </div>
+                    </div>
+                    <div class="fc-body">
+                        <div class="fc-name">M Kumaaravelan</div>
+                        <div class="fc-title">Co-Founder</div>
+                        <div class="fc-title-2">Madras Coffee House</div>
+                        <div class="fc-divider" style="border-top-color:var(--orange);background:var(--orange)"></div>
+                        <ul class="fc-bullets">
+                            <li>Over <strong>25 years of experience</strong> in the hospitality and food service
+                                industry</li>
+                            <li>Was managing a full-service hotel in Koyambedu, Chennai, when he first met Prasanna in
+                                2008</li>
+                            <li>Brings institutional expertise in kitchen operations, supply chain, vendor management,
+                                and large-scale F&amp;B delivery</li>
+                            <li>Architected MCH's standardised brewing protocol and operational SOP, ensuring quality
+                                consistency across all 85+ outlets</li>
+                            <li>Oversees day-to-day operations, outlet management, and franchise training programmes
+                            </li>
+                            <li>The operational backbone behind MCH's successful multi-city scale from Chennai to
+                                Gurgaon, Noida, and Mumbai</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <!-- PRASANNA CARD -->
                 <div class="founder-card fade-up d2">
@@ -1149,39 +1181,7 @@
                     </div>
                 </div>
 
-                <!-- KUMAARAVELAN CARD -->
-                <div class="founder-card fade-up d3">
-                    <div class="fc-img">
-                        <!-- Replace placeholder with: <img src="kumaaravelan.jpg" alt="M Kumaaravelan"/> -->
-                        <div class="fc-img-placeholder">
-                            <svg viewBox="0 0 24 24">
-                                <circle cx="12" cy="8" r="4" />
-                                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                            </svg>
-                            Kumaaravelan Photo
-                        </div>
-                    </div>
-                    <div class="fc-body">
-                        <div class="fc-name">M Kumaaravelan</div>
-                        <div class="fc-title">Co-Founder</div>
-                        <div class="fc-title-2">Madras Coffee House</div>
-                        <div class="fc-divider" style="border-top-color:var(--orange);background:var(--orange)"></div>
-                        <ul class="fc-bullets">
-                            <li>Over <strong>25 years of experience</strong> in the hospitality and food service
-                                industry</li>
-                            <li>Was managing a full-service hotel in Koyambedu, Chennai, when he first met Prasanna in
-                                2008</li>
-                            <li>Brings institutional expertise in kitchen operations, supply chain, vendor management,
-                                and large-scale F&amp;B delivery</li>
-                            <li>Architected MCH's standardised brewing protocol and operational SOP, ensuring quality
-                                consistency across all 85+ outlets</li>
-                            <li>Oversees day-to-day operations, outlet management, and franchise training programmes
-                            </li>
-                            <li>The operational backbone behind MCH's successful multi-city scale from Chennai to
-                                Gurgaon, Noida, and Mumbai</li>
-                        </ul>
-                    </div>
-                </div>
+
 
             </div>
         </div>
@@ -1355,10 +1355,7 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2026 Madras Coffee House Pvt. Ltd. All rights reserved.</p>
-                <div style="display:flex;align-items:center;gap:.5rem">
-                    <div class="footer-dot"></div>
-                    <p>Chennai, Tamil Nadu, India</p>
-                </div>
+                <p>Chennai, Tamil Nadu, India</p>
             </div>
         </div>
     </footer>
